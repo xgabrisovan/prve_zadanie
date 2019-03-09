@@ -27,7 +27,43 @@ void prienik(int x,int y,int pole1[x],int pole2[y])
 		}
 	}
 	printf("\n");
-}	
+}
+
+void zjednotenie(int x,int y,int pole1[x],int pole2[y])
+{ 
+  int i = 0, j = 0; 
+  while (i < x && j < y) 
+  { 
+    if (pole1[i] < pole2[j]) 
+    {
+		printf(" %d ", pole1[i]); 
+		i++;
+	}
+    else if (pole2[j] < pole1[i]) 
+    {
+		printf(" %d ", pole2[j]); 
+		j++;
+	}
+    else
+    { 
+      printf(" %d ", pole2[j]); 
+      i++;
+      j++; 
+    } 
+  }
+   
+  while(i < x) 
+	{
+		printf(" %d ", pole1[i]);
+		i++;
+	} 
+  while(j < y) 
+	{
+		printf(" %d ", pole2[j]);
+		j++;
+	}
+}
+	
 
 int main()
 {
@@ -35,5 +71,6 @@ int main()
 	nastav_pole(n,A);
 	nastav_pole(m,B);
 	prienik(n,m,A,B);
+	zjednotenie(n,m,A,B);
 	return(0);
 }
