@@ -6,6 +6,7 @@
 void nastav_pole(int x,int pole[x])
 {
 	int i;
+	
 	printf("Urc prvky mnoziny:\n");
 	for(i=0;i<x;i++)
 		{
@@ -17,6 +18,7 @@ void nastav_pole(int x,int pole[x])
 void prienik(int x,int y,int pole1[x],int pole2[y])
 {
 	int i,j;
+	
 	printf("Prienik mnozin:\n");
 	for(i=0;i<x;i++)
 	{
@@ -30,9 +32,10 @@ void prienik(int x,int y,int pole1[x],int pole2[y])
 }
 
 void zjednotenie(int x,int y,int pole1[x],int pole2[y])
-{ 
-	printf("Zjednotenie mnozin:\n");
+{ 	i
 	int i = 0, j = 0; 
+	
+	printf("Zjednotenie mnozin:\n");
 	while (i < x && j < y) 
 	{ 
 		if (pole1[i] < pole2[j]) 
@@ -46,7 +49,7 @@ void zjednotenie(int x,int y,int pole1[x],int pole2[y])
 			j++;
 		}
 		else
-		{ 
+		{	 
 			printf(" %d ", pole2[j]); 
 			i++;
 			j++; 
@@ -69,6 +72,7 @@ void zjednotenie(int x,int y,int pole1[x],int pole2[y])
 int main()
 {
 	int A[n],B[m];
+	
 	nastav_pole(n,A);
 	nastav_pole(m,B);
 	prienik(n,m,A,B);
