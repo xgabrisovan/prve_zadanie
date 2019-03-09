@@ -6,7 +6,7 @@
 void nastav_pole(int x,int pole[x])
 {
 	int i;
-	printf("zadaj prvky mnoziny:\n");
+	printf("Urc prvky mnoziny:\n");
 	for(i=0;i<x;i++)
 		{
 			scanf("%d",&pole[i]);
@@ -17,7 +17,7 @@ void nastav_pole(int x,int pole[x])
 void prienik(int x,int y,int pole1[x],int pole2[y])
 {
 	int i,j;
-	printf("prienik tvojich mnozin:\n");
+	printf("Prienik mnozin:\n");
 	for(i=0;i<x;i++)
 	{
 		for(j=0;j<y;j++)
@@ -31,33 +31,34 @@ void prienik(int x,int y,int pole1[x],int pole2[y])
 
 void zjednotenie(int x,int y,int pole1[x],int pole2[y])
 { 
-  int i = 0, j = 0; 
-  while (i < x && j < y) 
-  { 
-    if (pole1[i] < pole2[j]) 
-    {
-		printf(" %d ", pole1[i]); 
-		i++;
+	printf("Zjednotenie mnozin:\n");
+	int i = 0, j = 0; 
+	while (i < x && j < y) 
+	{ 
+		if (pole1[i] < pole2[j]) 
+		{
+			printf(" %d ", pole1[i]); 
+			i++;
+		}
+		else if (pole2[j] < pole1[i]) 
+		{
+			printf(" %d ", pole2[j]); 
+			j++;
+		}
+		else
+		{ 
+			printf(" %d ", pole2[j]); 
+			i++;
+			j++; 
+		} 
 	}
-    else if (pole2[j] < pole1[i]) 
-    {
-		printf(" %d ", pole2[j]); 
-		j++;
-	}
-    else
-    { 
-      printf(" %d ", pole2[j]); 
-      i++;
-      j++; 
-    } 
-  }
    
-  while(i < x) 
+	while(i < x) 
 	{
 		printf(" %d ", pole1[i]);
 		i++;
 	} 
-  while(j < y) 
+	while(j < y) 
 	{
 		printf(" %d ", pole2[j]);
 		j++;
