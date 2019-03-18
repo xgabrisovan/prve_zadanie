@@ -32,7 +32,7 @@ void prienik(int x,int y,int pole1[x],int pole2[y])
 }
 
 void zjednotenie(int x,int y,int pole1[x],int pole2[y])
-{ 	i
+{ 	
 	int i = 0, j = 0; 
 	
 	printf("Zjednotenie mnozin:\n");
@@ -60,7 +60,8 @@ void zjednotenie(int x,int y,int pole1[x],int pole2[y])
 	{
 		printf(" %d ", pole1[i]);
 		i++;
-	} 
+	}
+	 
 	while(j < y) 
 	{
 		printf(" %d ", pole2[j]);
