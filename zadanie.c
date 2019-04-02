@@ -7,19 +7,6 @@ typedef struct{
 	unsigned int dlzka;
 }MNC;
 
-
-void nastav_pole(int x,int pole[x])
-{
-	int i;
-	
-	printf("Urc prvky mnoziny:\n");
-	for(i=0;i<x;i++)
-		{
-			scanf("%d",&pole[i]);
-		}
-	printf("\n");
-}
-
 void prienik(MNC *A,MNC *B)
 {
 	int i,j;
@@ -85,9 +72,9 @@ int main()
 	N.dlzka=5;
 	M.pole=B;
 	M.dlzka=5;
-//	nastav_pole(n,A);
-//	nastav_pole(m,B);
+	
 	prienik(&N,&M);
-//	zjednotenie(n,m,A,B);
+	zjednotenie(&N,&M);
+	
 	return(0);
 }
