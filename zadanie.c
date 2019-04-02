@@ -1,7 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define n 5
-#define m 5
+
+
+typedef struct{
+	int *pole;
+	unsigned int dlzka;
+}MNC;
+
 
 void nastav_pole(int x,int pole[x])
 {
@@ -15,56 +20,56 @@ void nastav_pole(int x,int pole[x])
 	printf("\n");
 }
 
-void prienik(int x,int y,int pole1[x],int pole2[y])
+void prienik(MNC *A,MNC *B)
 {
 	int i,j;
 	
 	printf("Prienik mnozin:\n");
-	for(i=0;i<x;i++)
+	for(i=0;i<A->dlzka;i++)
 	{
-		for(j=0;j<y;j++)
+		for(j=0;j<B->dlzka;j++)
 		{
-			if (pole1[i]==pole2[j])
-				printf("%d " ,pole2[j]);
+			if (A->pole[i]==B->pole[j])
+				printf("%d " ,B->pole[j]);
 		}
 	}
 	printf("\n");
 }
 
-void zjednotenie(int x,int y,int pole1[x],int pole2[y])
+void zjednotenie(MNC *A, MNC *B)
 { 	
 	int i = 0, j = 0; 
 	
 	printf("Zjednotenie mnozin:\n");
-	while (i < x && j < y) 
+	while (i < A->dlzka && j < B->dlzka) 
 	{ 
-		if (pole1[i] < pole2[j]) 
+		if (A->pole[i] < B->pole[j]) 
 		{
-			printf(" %d ", pole1[i]); 
+			printf(" %d ", A->pole[i]); 
 			i++;
 		}
-		else if (pole2[j] < pole1[i]) 
+		else if (B->pole[j] < A->pole[i]) 
 		{
-			printf(" %d ", pole2[j]); 
+			printf(" %d ", B->pole[j]); 
 			j++;
 		}
 		else
 		{	 
-			printf(" %d ", pole2[j]); 
+			printf(" %d ", B->pole[j]); 
 			i++;
 			j++; 
 		} 
 	}
    
-	while(i < x) 
+	while(i < A->dlzka) 
 	{
-		printf(" %d ", pole1[i]);
+		printf(" %d ", A->pole[i]);
 		i++;
 	}
 	 
-	while(j < y) 
+	while(j < B->dlzka) 
 	{
-		printf(" %d ", pole2[j]);
+		printf(" %d ", B->pole[j]);
 		j++;
 	}
 }
@@ -72,11 +77,17 @@ void zjednotenie(int x,int y,int pole1[x],int pole2[y])
 
 int main()
 {
-	int A[n],B[m];
+    
+	int A[5]={1,2,3,4,5},B[5]={3,4,5,6,7};
+	MNC N,M;
 	
-	nastav_pole(n,A);
-	nastav_pole(m,B);
-	prienik(n,m,A,B);
-	zjednotenie(n,m,A,B);
+	N.pole=A;
+	N.dlzka=5;
+	M.pole=B;
+	M.dlzka=5;
+//	nastav_pole(n,A);
+//	nastav_pole(m,B);
+	prienik(&N,&M);
+//	zjednotenie(n,m,A,B);
 	return(0);
 }
